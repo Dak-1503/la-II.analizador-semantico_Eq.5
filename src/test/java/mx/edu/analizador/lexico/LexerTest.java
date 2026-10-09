@@ -24,4 +24,12 @@ class LexerTest {
     void caracterDesconocidoLanzaExcepcion() {
         assertThrows(IllegalStateException.class, () -> lexer().analizar("(@)"));
     }
+
+    // NUEVA PRUEBA: Para verificar directivas
+    @Test
+    void reconoceDirectivas() {
+        List<Token> tokens = lexer().analizar("#include");
+        assertEquals(1, tokens.size());
+        assertEquals(new Token("#include", TipoToken.DIRECTIVA, 1, 1, 8), tokens.get(0));
+    }
 }

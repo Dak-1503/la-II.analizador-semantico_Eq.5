@@ -2,7 +2,8 @@ package mx.edu.analizador.lexico;
 
 /** Reconoce los símbolos de un solo carácter: ( ) { } [ ] ; , */
 public class ReconocedorSimbolo implements ReconocedorToken {
-    private static final String SIMBOLOS = "(){}[];,";
+    // Diccionario extendido: Agrupación (), {}, []; Separadores , ; . : ?
+    private static final String SIMBOLOS = "(){}[];,.:?";
 
     @Override
     public boolean puedeIniciar(Cursor cursor) {
